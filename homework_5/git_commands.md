@@ -238,3 +238,44 @@ If you wish to set tracking information for this branch you can do so with:
 
 Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
 $ 
+
+
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
+$ git add .
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
+$ git commit -m "last tasks"
+[third-branch b160602] last tasks
+ 2 files changed, 204 insertions(+), 1 deletion(-)
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
+$ git push origin main
+Everything up-to-date
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git merge third-branch
+Updating 76af0ac..b160602
+Fast-forward
+ homework_5/git_commands.md | 120 ++++++++++++++++++++++++++++++++++++++++++++-
+ homework_5/homework_5.py   |  85 ++++++++++++++++++++++++++++++++
+ 2 files changed, 204 insertions(+), 1 deletion(-)
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 2.43 KiB | 829.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/EsmoAghamedova/commschool-x-gita.git
+   76af0ac..b160602  main -> main
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
