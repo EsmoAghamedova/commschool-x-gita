@@ -120,3 +120,121 @@ Fast-forward
  2 files changed, 204 insertions(+)
  create mode 100644 homework_5/git_commands.md
  create mode 100644 homework_5/homework_5.py
+
+
+
+ 
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git branch
+  first-branch
+* main
+  second-branch
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git checkout second-branch
+Switched to branch 'second-branch'
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> second-branch
+
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git checkout main
+error: The following untracked working tree files would be overwritten by checkout:
+        homework_5/git_commands.md
+Please move or remove them before you switch branches.
+Aborting
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git add .
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        homework_5/git_commands.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git add .
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git commit -m "4-6 tasks" 
+[second-branch 5775a23] 4-6 tasks
+ 1 file changed, 192 insertions(+), 63 deletions(-)
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (second-branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git merge second-branch
+Auto-merging homework_5/homework_5.py
+Merge made by the 'ort' strategy.
+ homework_5/homework_5.py | 131 ++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 130 insertions(+), 1 deletion(-)
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git push main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git pull
+Already up to date.
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git push origin main
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 2.90 KiB | 270.00 KiB/s, done.
+Total 14 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (6/6), completed with 2 local objects.
+To https://github.com/EsmoAghamedova/commschool-x-gita.git
+   56c4054..76af0ac  main -> main
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git branch third-branch
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (main)
+$ git checkout third-branch
+Switched to branch 'third-branch'
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> third-branch
+
+
+Esmira@ESMIRA MINGW64 ~/OneDrive/Desktop/commschool x gita (third-branch)
+$ 

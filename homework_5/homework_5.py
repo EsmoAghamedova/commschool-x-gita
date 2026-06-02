@@ -271,3 +271,88 @@ elif choice == "4":
     print(unique_numbers)
 else:
     print("არასწორი არჩევანი!")
+
+
+# # 7 ტექსტის ფილტრი
+# მომხმარებელი შეჰყავს ტექსტი.
+# ამოცანა: პროგრამამ უნდა წაშალოს ყველა ციფრი და სიმბოლო, დატოვოს მხოლოდ ასოები და
+# სივრცეები.
+
+text = input("შეიყვანე ტექსტი: ")
+
+filtered_text = ""
+
+for char in text:
+    if char.isalpha() or char == " ":
+        filtered_text += char
+
+print("გაფილტრული ტექსტი:")
+print(filtered_text)
+
+# # 8 პირამიდა
+# მომხმარებელი შეჰყავს რიცხვების სია(მაგ. 3, 5, 7, 2).
+# ამოცანა: შექმენი “პირამიდა”, სადაც ყოველი ახალი რიგი ზემოთაა წინა ორი რიცხვის ჯამი.
+# 3 5 7 2
+
+# 8 12 9
+# 20 21
+# 41
+
+user_input = input("შეიყვანე რიცხვები გამოტოვებით: ")
+numbers = user_input.split()
+valid = True
+
+for num in numbers:
+    if not num.isdigit():
+        valid = False
+        break
+
+if valid:
+    pyramid = [int(num) for num in numbers]
+
+    while len(pyramid) > 1:
+        print(*pyramid)
+        new_row = []
+        for i in range(len(pyramid) - 1):
+            new_row.append(pyramid[i] + pyramid[i + 1])
+        pyramid = new_row
+    print(*pyramid)
+else:
+    print("შეიყვანე მხოლოდ რიცხვები!")
+
+# # 9 მომხმარებელი შეჰყავს ნებისმიერი ტექსტი, მოძებნე, რომელი სიტყვა მეორდება ტექსტში ყველაზე
+# მეტჯერ. მაგ: "Python is great and python is easy" → ყველაზე ხშირია
+# "python". თუ ორი ან მეტი სიტყვაა ტოლი, დააბრუნე ყველა.
+
+text = input("შეიყვანე ტექსტი: ")
+word_count = {}
+
+for word in text.split():
+    word = word.lower()
+
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+max_count = max(word_count.values())
+most_frequent = []
+
+for word, count in word_count.items():
+    if count == max_count:
+        most_frequent.append(word)
+print("ყველაზე ხშირად განმეორებადი სიტყვები:")
+for word in most_frequent:
+    print(word)
+
+# # 10 მომხმარებელს შეჰყავს წინადადება, ამოცანა: გამოიანგარიშე თითოეული სიტყვის სიგრძე და
+# დააბრუნე dictionary
+# მაგალითად: "Python is fun" → {"Python": 6, "is": 2, "fun": 3}
+
+sentence = input("შეიყვანე წინადადება: ")
+word_lengths = {}
+
+for word in sentence.split():
+    word_lengths[word] = len(word)
+
+print(word_lengths)
