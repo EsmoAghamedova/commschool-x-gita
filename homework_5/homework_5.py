@@ -141,4 +141,133 @@ while True:
     else:
         print("შენ შემოიტანე სიმბოლო, არასწორია! მხოლოდ რიცხვი შეიყვანე.")
     
-    
+
+# # 4 პალინდრომი
+# ამოცანა: შეამოწმე, არის თუ არა შეყვანილი ტექსტი პალინდრომი(მხოლოდ ასოები/ციფრები). თუ
+# არაა, შესთავაზე ყველაზე ახლო პალინდრომი ერთი სიმბოლოს ჩასმით/წაშლით.
+# 
+def is_palindrome(text):
+    cleaned = ""
+
+    for char in text.lower():
+        if char.isalnum():
+            cleaned += char
+
+    return cleaned == cleaned[::-1]
+
+
+def closest_palindrome(text):
+    cleaned = ""
+
+    for char in text.lower():
+        if char.isalnum():
+            cleaned += char
+
+    if cleaned == cleaned[::-1]:
+        return "ეს უკვე პალინდრომია."
+
+    # ერთი სიმბოლოს წაშლით ვამოწმებთ
+    for i in range(len(cleaned)):
+        candidate = cleaned[:i] + cleaned[i + 1:]
+
+        if candidate == candidate[::-1]:
+            return f"ყველაზე ახლო პალინდრომი: {candidate}"
+
+    return "ერთი სიმბოლოს წაშლით პალინდრომი ვერ მივიღეთ."
+
+
+text = input("შეიყვანე ტექსტი: ")
+
+if is_palindrome(text):
+    print("ტექსტი პალინდრომია.")
+else:
+    print("ტექსტი პალინდრომი არ არის.")
+    print(closest_palindrome(text))
+
+# # 5 ზედმეტსახელების გენერატორი
+# მომხმარებელს შემოაქვს მხოლოდ ერთი სიტყვა(სხვა შემთხვევები დაბლოკე) და შენ სთავაზობ 5
+# ზედმეტსახელს ამ სიტყვასთან კავშირში.
+
+import random
+def generate_nicknames(word):
+    return [
+        word + "Pro",
+        word + "Master",
+        "Dark" + word,
+        word + "X",
+        "The" + word
+    ]
+
+
+while True:
+    user_word = input("შეიყვანე მხოლოდ ერთი სიტყვა: ").strip()
+
+    if not user_word:
+        print("ცარიელი მნიშვნელობა არ შეიძლება!")
+        continue
+
+    if " " in user_word:
+        print("მხოლოდ ერთი სიტყვა უნდა შეიყვანო!")
+        continue
+
+    if not user_word.isalnum():
+        print("გამოიყენე მხოლოდ ასოები და ციფრები!")
+        continue
+
+    break
+
+nicknames = generate_nicknames(user_word)
+
+print("\nშეთავაზებული ზედმეტსახელები:")
+for i, nickname in enumerate(nicknames, start=1):
+    print(f"{i}. {nickname}")
+
+# # 6 სორტირება
+# მომხმარებელს შემოჰყავს რიცხვები თითო გამოტოვებით, (ულიმიტოდ რამდენიც უნდა) პროგრამა
+# სთავაზობს როგორ უნდა რომ დაუსორტირდეს აღნიშნული: კლებადობით, ზრდადობით, random-ად,
+# მხოლოდ უნიკალური მონაცემები დატოვოს. რომელსაც აირჩევს უნდა გამოვიდეს ზუსტად ისე
+# დალაგებული სია.
+
+
+while True:
+    user_input = input("შეიყვანე რიცხვები გამოტოვებით: ").strip()
+    parts = user_input.split()
+    if len(parts) == 0:
+        print("მინიმუმ ერთი რიცხვი შეიყვანე!")
+        continue
+    valid = True
+    for num in parts:
+        if not (num.isdigit() or (num[0] == "-" and num[1:].isdigit())):
+            valid = False
+            break
+    if valid:
+        numbers = [int(num) for num in parts]
+        break
+    print("შეიყვანე მხოლოდ რიცხვები!")
+
+print("""
+1 - ზრდადობით
+2 - კლებადობით
+3 - Random-ად
+4 - მხოლოდ უნიკალური მონაცემები
+""")
+
+choice = input("აირჩიე: ")
+
+if choice == "1":
+    print(sorted(numbers))
+elif choice == "2":
+    print(sorted(numbers, reverse=True))
+elif choice == "3":
+    random.shuffle(numbers)
+    print(numbers)
+elif choice == "4":
+    unique_numbers = []
+
+    for num in numbers:
+        if num not in unique_numbers:
+            unique_numbers.append(num)
+
+    print(unique_numbers)
+else:
+    print("არასწორი არჩევანი!")
