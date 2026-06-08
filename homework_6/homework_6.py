@@ -9,99 +9,99 @@ import random
 # word = "ABCD"
 
 
-# word = "ABCD"
-# count = 0
+word = "ABCD"
+count = 0
 
-# for p in permutations(word):
-#     print("".join(p))
-#     count += 1
+for p in permutations(word):
+    print("".join(p))
+    count += 1
 
-# print(f"სულ: {count}")
+print(f"სულ: {count}")
 
 # \#2 იპოვე მომდევნო კვირის პირველი სამშაბათი, საწყისი თარიღი არის დღევანდელი დღე (ხელით არ გაწეროთ თარიღი)
 
 
-# today = datetime.today()
+today = datetime.today()
 
-# weekday = today.weekday()
-# tuesday_day = 1
+weekday = today.weekday()
+tuesday_day = 1
 
-# day = (tuesday_day - weekday) % 7
+day = (tuesday_day - weekday) % 7
 
-# if day == 0:
-#     day = 7
+if day == 0:
+    day = 7
 
-# next_tuesday = today + timedelta(days=day)
+next_tuesday = today + timedelta(days=day)
 
-# print(next_tuesday)
+print(next_tuesday)
 
 
 # \#3 დაადგინე, არის თუ არა შეყვანილი წელი ნაკიანი, მომხმარებელს შემოჰყავს მხოლოდ წელი და ვეუბნებით არის თუ არა ნაკიანი
 
 # myinput = ...
 
-# myinput = input("შეიყვანეთ წელი: ")
+myinput = input("შეიყვანეთ წელი: ")
 
-# if calendar.isleap(int(myinput)) == True:
-#     print(f"{myinput} არის ნაკიანი წელი")
-# else:
-#     print(f"{myinput} არ არის ნაკიანი წელი")
+if calendar.isleap(int(myinput)) == True:
+    print(f"{myinput} არის ნაკიანი წელი")
+else:
+    print(f"{myinput} არ არის ნაკიანი წელი")
 
 
 # \#4 დაითვალე რამდენი კვირაა დარჩენილი ახალ წლამდე, საწყისი თარიღი არის დღევანდელი დღე (ხელით არ გაწეროთ თარიღი)
 
-# today = datetime.today()
-# next_year = datetime(today.year + 1, 1, 1)
-# days_until_new_year = (next_year - today).days
-# weeks_until_new_year = days_until_new_year // 7
+today = datetime.today()
+next_year = datetime(today.year + 1, 1, 1)
+days_until_new_year = (next_year - today).days
+weeks_until_new_year = days_until_new_year // 7
 
-# print(f"ახალ წლამდე დარჩენილი კვირების რაოდენობა: {weeks_until_new_year}")
+print(f"ახალ წლამდე დარჩენილი კვირების რაოდენობა: {weeks_until_new_year}")
 
 
 # \#5 შექმენი ყველა 3-ელემენტიანი კომბინაცია სიიდან \[1,2,3,4,5] (itertools-ის გამოყენებით)
 
-# mylist = [1, 2, 3, 4, 5]
-# combinations_list = list(combinations(mylist, 3))
+mylist = [1, 2, 3, 4, 5]
+combinations_list = list(combinations(mylist, 3))
 
-# print(combinations_list)
+print(combinations_list)
 
 
 # \#6 მიიღე ყველა კომბინაცია "XYZ"-ის სიმბოლოებით სიგრძე 1-დან 3-მდე
 # მაგალითი: X, Y, Z, XY, XZ, YZ, XYZ უნდა მივიღოთ მსგავსი შედეგი.
 
 
-# symbols = ['X', 'Y', "Z"]
+symbols = ['X', 'Y', "Z"]
 
-# for i in range(1,4):
-#     for combo in combinations(symbols, i):
-#         print("".join(combo))
+for i in range(1,4):
+    for combo in combinations(symbols, i):
+        print("".join(combo))
 
 # \#7 თამაში უკუსვლაზე
 # კომპიუტერი ირჩევს შემთხვევითობის პრინციპით რიცხვს 1-20 მდე, მოთამაშეს აქვს მხოლოდ 5 წამი რიცხვის გამოსაცნობად, თუ 5 წამში სწორ რიცხვს ვერ შეიყვანს, თამაში სრულდება და გამოდის ტექსტი "დრო ამოიწურა, თქვენ დამარცხდით".
 # from datetime import datetime, timedelta
 # import time, random
 
-# num = random.randint(1, 20)
-# print("გამოიცანი რიცხვი 1-დან 20-მდე 5 წამში.")
+num = random.randint(1, 20)
+print("გამოიცანი რიცხვი 1-დან 20-მდე 5 წამში.")
 
-# end_time = datetime.now() + timedelta(seconds=5)
+end_time = datetime.now() + timedelta(seconds=5)
 
-# while datetime.now() < end_time:
-#     try:
-#         user_ans = int(input("number: "))
+while datetime.now() < end_time:
+    try:
+        user_ans = int(input("number: "))
 
-#         if user_ans == num:
-#             print("it's correct")
-#             break
+        if user_ans == num:
+            print("it's correct")
+            break
 
-#         else:
-#             print("it's not correct")
+        else:
+            print("it's not correct")
 
-#     except ValueError:
-#         print("only number")
+    except ValueError:
+        print("only number")
 
-# else:
-#     print("time out")
+else:
+    print("time out")
 
 
 # \#8 ორი მოთამაშე იწყებს "გარბენს". უნდა შეამოწმო რომელი დაასრულებს ნაკლებ დროში
