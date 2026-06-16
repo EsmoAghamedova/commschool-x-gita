@@ -1,0 +1,58 @@
+{
+  "task3": [
+    {"id": 1, "price": 50},
+    {"id": 2, "price": 200},
+    {"id": 3, "price": 150}
+  ],
+  "task4": {
+    "company": {
+      "departments": [
+        {
+          "name": "IT",
+          "employees": [
+            {"name": "Ana"},
+            {"name": "Beka"}
+          ]
+        },
+        {
+          "name": "HR",
+          "employees": [
+            {"name": "Nino"}
+          ]
+        }
+      ]
+    }
+  },
+  "task5": [
+    {
+      "name": "Ana",
+      "grades": [90, 80, 95]
+    },
+    {
+      "name": "Beka",
+      "grades": [70, 85, 88]
+    },
+    {
+      "name": "Nino",
+      "grades": [100, 95, 99]
+    }
+  ],
+  "task6": {
+    "companies": [
+      {
+        "name": "TechCorp",
+        "employees": [
+          {"name": "Ana", "salary": 3000},
+          {"name": "Beka", "salary": 4500}
+        ]
+      },
+      {
+        "name": "SoftPlus",
+        "employees": [
+          {"name": "Nino", "salary": 5000},
+          {"name": "Giorgi", "salary": 2500}
+        ]
+      }
+    ]
+  }
+}
