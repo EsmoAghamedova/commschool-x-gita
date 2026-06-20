@@ -209,8 +209,13 @@ class SuperHero(Hero):
 
 hero = SuperHero.from_name("Esmira")
 
-while hero.is_alive():
+turn = 0
+
+while hero.is_alive() and turn < 10:
     hero.play_turn()
+    turn += 1
+
+print("Game over 🎮")
 
 # 5 პროგრამა კარტზე
 # Card კლასი(rank, suit).
