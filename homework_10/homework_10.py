@@ -200,7 +200,7 @@ class SuperHero(Hero):
     def play_turn(self):
         event, hp_change, score_change = self.random_event()
 
-        self._Hero__health += hp_change + 10  # small boost
+        self._Hero__health += hp_change + 10  
         self._Hero__score += score_change
 
         print(self.name, "(super)", event,
