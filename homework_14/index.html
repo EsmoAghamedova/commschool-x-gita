@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0D1117;
+            --card-color: #161B22;
+            --primary-color: #58A6FF;
+            --accent-color: #2EA043;
+            --text-color: #ffffff;
+            --border-color: #30363d;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--card-color) !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-color) !important;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 100px 0;
+            background: radial-gradient(circle at top right, rgba(88, 166, 255, 0.1), transparent);
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            font-weight: 600;
+        }
+        .btn-primary-custom:hover {
+            background-color: #4086d4;
+            color: var(--bg-color);
+        }
+        .btn-accent-custom {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        .btn-accent-custom:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Carousel */
+        .carousel {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .carousel-item {
+            background-color: var(--card-color);
+            padding: 60px 20px;
+        }
+
+        /* Cards */
+        .custom-card {
+            background-color: var(--card-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-color);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        /* List Group in Cards */
+        .list-group-item {
+            background-color: transparent;
+            color: #8b949e;
+            border-color: var(--border-color);
+        }
+
+        /* Modal & Form inputs */
+        .modal-content {
+            background-color: var(--card-color);
+            border: 1px solid var(--border-color);
+        }
+        .form-control {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: white;
+        }
+        .form-control:focus {
+            background-color: var(--bg-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(88, 166, 255, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-color);
+            border-top: 1px solid var(--border-color);
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="bi bi-code-slash text-primary"></i> DevFuture</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon navbar-dark"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-link-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-link-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-link-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-link-item"><a class="nav-link" href="#career">Career</a></li>
+                    <li class="nav-link-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3" style="color: var(--primary-color);">Software Engineering</h1>
+            <p class="lead text-secondary mb-4">Build the future with code.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#about" class="btn btn-primary-custom px-4 py-2">Learn More</a>
+                <a href="#career" class="btn btn-accent-custom px-4 py-2">Start Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div id="techCarousel" class="carousel slide text-center" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h3 class="display-6">🖥️ Frontend Development</h3>
+                    <p class="text-secondary mt-2">Creating beautiful, responsive, and user-friendly interfaces.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3 class="display-6">⚙️ Backend Development</h3>
+                    <p class="text-secondary mt-2">Managing databases, logic, servers, and APIs behind the scenes.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3 class="display-6">☁️ Cloud & DevOps</h3>
+                    <p class="text-secondary mt-2">Deploying apps and ensuring continuous integration and scaling.</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#techCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#techCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <section id="about" class="container my-5 py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4">About Software Engineering</h2>
+                <blockquote class="blockquote bg-dark p-4 rounded border-start border-primary" style="background-color: var(--card-color) !important;">
+                    <p class="mb-0 text-secondary italic">"Software engineering is the process of designing, building, testing, and maintaining software applications that solve real-world problems."</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="career" class="container my-5">
+        <h2 class="text-center mb-5">Career Paths</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card custom-card h-100 p-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-info mb-3">💙 Frontend Developer</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check2 text-info"></i> HTML</li>
+                            <li class="list-group-item"><i class="bi bi-check2 text-info"></i> CSS</li>
+                            <li class="list-group-item"><i class="bi bi-check2 text-info"></i> JavaScript</li>
+                            <li class="list-group-item"><i class="bi bi-check2 text-info"></i> React</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card custom-card h-100 p-3">
+                    <div class="card-body">
+                        <h4 class="card-title text-success mb-3">💚 Backend Developer</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check2 text-success"></i> Python</li>
+                            <li class="list-group-item"><i class="bi bi-check2 text-success"></i> Node.js</li>
+                            <li class="list-group-item"><i class="bi bi-check2 text-success"></i> Databases</li>
+                            <li class="list-group-item"><i class="bi bi-check2 text-success"></i> APIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card custom-card h-100 p-3">
+                    <div class="card-body">
+                        <h4 class="card-title style mb-3" style="color: #9b5de5;">💜 Full Stack Developer</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check2" style="color: #9b5de5;"></i> Frontend</li>
+                            <li class="list-group-item"><i class="bi bi-check2" style="color: #9b5de5;"></i> Backend</li>
+                            <li class="list-group-item"><i class="bi bi-check2" style="color: #9b5de5;"></i> Git</li>
+                            <li class="list-group-item"><i class="bi bi-check2" style="color: #9b5de5;"></i> Deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5 text-center">
+        <div class="d-flex justify-content-center align-items-center gap-3 mb-4">
+            <div class="spinner-border text-primary" role="status"></div>
+            <span class="text-secondary">Loading technologies...</span>
+        </div>
+        
+        <button type="button" class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#whySEModal">
+            Why Software Engineering?
+        </button>
+    </div>
+
+    <div class="modal fade" id="whySEModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" style="color: var(--primary-color);">Why Software Engineering?</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-shadow="none" data-bs-dist="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <ul class="list-unstyled lh-lg">
+                        <li><i class="bi bi-star-fill text-warning me-2"></i> High demand in global market</li>
+                        <li><i class="bi bi-laptop text-info me-2"></i> Remote working opportunities</li>
+                        <li><i class="bi bi-lightbulb text-success me-2"></i> Creative and dynamic work environment</li>
+                        <li><i class="bi bi-arrow-repeat text-danger me-2"></i> Continuous learning and growth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container my-5">
+        <h3 class="text-center mb-4">What is Software Engineering?</h3>
+        <p class="text-center">It's not working in web but watch it, i recommend!😂</p>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="ratio ratio-16x9 border border-secondary rounded overflow-hidden">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="What is Software Engineering" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5 py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6 p-4 rounded" style="background-color: var(--card-color); border: 1px solid var(--border-color);">
+                <h3 class="mb-4 text-center">Contact Us</h3>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Name</label>
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Email</label>
+                        <input type="email" class="form-control" placeholder="name@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Message</label>
+                        <textarea class="form-control" rows="4" placeholder="Your Message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-accent-custom w-100 py-2">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 mt-5">
+        <p class="mb-0">&copy; 2026 Software Engineering. Built with Bootstrap.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
