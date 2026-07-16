@@ -1,0 +1,7 @@
+2026-07-16 18:36:12,043 - Lottery Draw - Winning: [5, 23, 24, 36, 42, 44], Player: [1, 22, 33, 44, 55], Matches: 1, Result: 1/6 Matches - No prize, Prize: 0.00 GEL
+2026-07-16 18:36:34,877 - Lottery Draw - Winning: [6, 7, 10, 29, 36, 39], Player: [1, 26, 43, 56, 78], Matches: 0, Result: 0/6 Matches - No prize, Prize: 0.00 GEL
+2026-07-16 18:36:50,860 - Lottery Draw - Winning: [15, 27, 34, 40, 42, 46], Player: [1, 2, 3, 4, 5, 6], Matches: 0, Result: 0/6 Matches - No prize, Prize: 0.00 GEL
+2026-07-16 18:37:00,922 - Lottery Draw - Winning: [1, 14, 17, 31, 39, 41], Player: [1], Matches: 1, Result: 1/6 Matches - No prize, Prize: 0.00 GEL
+2026-07-16 18:37:09,206 - Lottery Draw - Winning: [2, 11, 16, 26, 34, 43], Player: [1], Matches: 0, Result: 0/6 Matches - No prize, Prize: 0.00 GEL
+2026-07-16 18:37:15,654 - Lottery Draw - Winning: [18, 19, 21, 22, 24, 42], Player: [1, 2, 3, 4, 5, 6], Matches: 0, Result: 0/6 Matches - No prize, Prize: 0.00 GEL
+2026-07-16 18:37:22,891 - Lottery Draw - Winning: [8, 11, 22, 24, 39, 48], Player: [33], Matches: 0, Result: 0/6 Matches - No prize, Prize: 0.00 GEL
