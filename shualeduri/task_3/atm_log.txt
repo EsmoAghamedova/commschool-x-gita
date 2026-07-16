@@ -1,0 +1,7 @@
+2026-07-16 16:34:23,599 - Balance check: 2500.00 GEL
+2026-07-16 16:34:39,500 - Withdrawal: 1000.00 GEL, New balance 1500.00 GEL
+2026-07-16 16:34:48,564 - Deposit: 200.00 GEL, New balance 1700.00 GEL
+2026-07-16 16:34:54,563 - Deposit: 1000.00 GEL, New balance 2700.00 GEL
+2026-07-16 16:35:01,211 - Failed deposit: Requested 1234.00 GEL > Limit 1000
+2026-07-16 16:35:13,379 - Failed withdrawal: Amount must be greater than 0.
+2026-07-16 16:35:17,387 - ATM closed.
