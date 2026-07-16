@@ -1,5 +1,13 @@
 from book_data import books
-print("what are you going to do:\n1. see books list\n2. take out book\n 3. add new book\n4. search book by name (to choose type number or exit to stop)")
+# print("what are you going to do:\n1. see books list\n2. take out book\n3. add new book\n4. search book by name (to choose type number or exit to stop)")
+print("========= Mini Library =========")
+print("1. Show books")
+print("2. Borrow books")
+print("3. Add books")
+print("4. Search books")
+print(f"Type (exit) to quit")
+print("================================")
+
 while True:
     user = input("which one: ")
 
@@ -7,7 +15,8 @@ while True:
         break
     elif user == "1":
         for book in books:
-            print(f"{book['name']} - {book['author']}, {book['year']}")
+            status = "Available" if book["status"] else "Borrowed"
+            print(f"{book['name']} - {book['author']}, {book['year']} | {status}")
     elif user == "2":
         print("choose book: \n")
         for book in books:
@@ -17,12 +26,14 @@ while True:
         for b in books:
             if book in b["name"]:
                 found = True
-                if b['status']:
+                if not b['status']:
+                    print("book isn't available for now")
+                    break
+                else:
                     b["status"] = False
                     print(f"you take out book: {b['name']}")
                     break
-                else:
-                    print("book isn't available for now")
+
         if not found:
             print("this book isn't in library")
     elif user == "3":
@@ -35,12 +46,13 @@ while True:
             "year": year,
             "status": True
         })
+        print("Book added successfully!")
     elif user == "4":
         found = False
         book = input("search book: ")
         for b in books:
 
-            if book in b["name"]:
+            if book.lower() in b["name"].lower():
                 found = True
                 status = "Available" if b["status"] else "Borrowed"
                 print(f"{b['name']} - {b['author']} ({b['year']}) | {status}")
