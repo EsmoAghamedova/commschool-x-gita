@@ -1,5 +1,4 @@
 :root {
-    /* Color Palette */
     --color-bg: #f8fafc;
     --color-card: #ffffff;
     --color-primary: #2563eb;
@@ -11,10 +10,8 @@
     --color-danger: #ef4444;
     --color-row-hover: #f1f5f9;
 
-    /* Typography */
     --font-body: "Inter", "Poppins", sans-serif;
 
-    /* Borders & Shadows */
     --radius-card: 16px;
     --radius-btn: 10px;
     --radius-input: 10px;
@@ -45,7 +42,6 @@ img {
     display: block;
 }
 
-/* Navigation Bar (~70px height) */
 header {
     display: flex;
     justify-content: space-between;
@@ -120,7 +116,6 @@ nav ul li a.active {
     background-repeat: no-repeat;
 }
 
-/* Adjusted typography colors for readability over the background image */
 .eyebrow {
     font-size: 0.8rem;
     font-weight: 600;

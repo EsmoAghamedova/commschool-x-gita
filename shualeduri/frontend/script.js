@@ -1,7 +1,3 @@
-// Tbilisi Grand Hotel — shared site logic
-// გვერდებს შორის მონაცემები URL query პარამეტრებით გადადის
-// (არ ვიყენებთ localStorage/sessionStorage-ს)
-
 const ROOMS = [
     { number: 101, type: "Single", price: 80, guests: 1, available: true },
     { number: 203, type: "Double", price: 140, guests: 2, available: true },
@@ -13,9 +9,6 @@ function findRoom(roomNumber) {
     return ROOMS.find((r) => r.number === Number(roomNumber)) || null;
 }
 
-// ---------------------------------------------------------------
-// rooms.html — ოთახის ბარათების დინამიური დარენდერება
-// ---------------------------------------------------------------
 function renderRooms() {
     const grid = document.getElementById("room-grid");
     grid.innerHTML = "";
@@ -45,9 +38,6 @@ function renderRooms() {
     });
 }
 
-// ---------------------------------------------------------------
-// booking.html — ფასის გამოთვლა + ფორმის დადასტურება
-// ---------------------------------------------------------------
 function initBookingForm() {
     const roomNumberInput = document.getElementById("room-number");
     const nightsInput = document.getElementById("nights");
@@ -55,7 +45,6 @@ function initBookingForm() {
     const form = document.getElementById("booking-form");
     const message = document.getElementById("booking-message");
 
-    // ოთახის ნომრის ავტომატური შევსება rooms.html-დან მოსული ბმულით
     const params = new URLSearchParams(window.location.search);
     const prefillRoom = params.get("room");
     if (prefillRoom) {
@@ -99,7 +88,6 @@ function initBookingForm() {
 
         const total = (room.price * nights).toFixed(2);
 
-        // შედეგს გადავცემთ status.html-ს URL პარამეტრებით
         const query = new URLSearchParams({
             name,
             room: room.number,
@@ -112,9 +100,6 @@ function initBookingForm() {
     });
 }
 
-// ---------------------------------------------------------------
-// status.html — დადასტურების დეტალების ჩვენება URL პარამეტრებიდან
-// ---------------------------------------------------------------
 function initStatusPage() {
     const container = document.getElementById("status-summary");
     const params = new URLSearchParams(window.location.search);
@@ -149,9 +134,6 @@ function initStatusPage() {
   `;
 }
 
-// ---------------------------------------------------------------
-// გვერდის ამოცნობა და შესაბამისი ფუნქციის გაშვება
-// ---------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("room-grid")) renderRooms();
     if (document.getElementById("booking-form")) initBookingForm();
