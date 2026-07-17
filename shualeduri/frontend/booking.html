@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>დაჯავშნა — Tbilisi Grand Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span class="logo-mark">⌘</span>
+        <span class="logo-text">Tbilisi Grand</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="rooms.html">ოთახები</a></li>
+          <li><a href="booking.html" class="active">დაჯავშნა</a></li>
+          <li><a href="status.html">სტატუსი</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="booking">
+      <h2>დაჯავშნის ფორმა</h2>
+      <p class="section-note">
+        შეიყვანეთ ოთახის ნომერი <a href="rooms.html">ოთახების გვერდიდან</a>, ან
+        აკრიფეთ ხელით.
+      </p>
+
+      <form id="booking-form">
+        <div class="field">
+          <label for="guest-name">სახელი</label>
+          <input
+            type="text"
+            id="guest-name"
+            name="guest-name"
+            placeholder="თქვენი სახელი"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="room-number">ოთახის ნომერი</label>
+          <input
+            type="number"
+            id="room-number"
+            name="room-number"
+            placeholder="მაგ. 101"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="nights">ღამეების რაოდენობა</label>
+          <input
+            type="number"
+            id="nights"
+            name="nights"
+            min="1"
+            value="1"
+            required
+          />
+        </div>
+
+        <div class="field total-field">
+          <span class="total-label">სავარაუდო ჯამი</span>
+          <span class="total-value" id="total-value">— GEL</span>
+        </div>
+
+        <button type="submit" id="book-button">დაჯავშნის დადასტურება</button>
+      </form>
+
+      <p id="booking-message" class="booking-message"></p>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2026 Tbilisi Grand Hotel — Final Project, Python Course, COMM
+        School
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

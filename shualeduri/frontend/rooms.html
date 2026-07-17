@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ოთახები — Tbilisi Grand Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span class="logo-mark">⌘</span>
+        <span class="logo-text">Tbilisi Grand</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="rooms.html" class="active">ოთახები</a></li>
+          <li><a href="booking.html">დაჯავშნა</a></li>
+          <li><a href="status.html">სტატუსი</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="rooms">
+      <h2>თავისუფალი ოთახები</h2>
+      <p class="section-note">
+        დააჭირეთ ოთახს, რომ პირდაპირ გადახვიდეთ დაჯავშნის ფორმაზე — ნომერი
+        ავტომატურად შეივსება.
+      </p>
+
+      <div class="room-grid" id="room-grid">
+        <!-- ოთახის ბარათები დინამიურად ივსება script.js-იდან -->
+        <p class="loading-note">იტვირთება...</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2026 Tbilisi Grand Hotel — Final Project, Python Course, COMM
+        School
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
