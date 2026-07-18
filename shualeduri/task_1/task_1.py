@@ -1,5 +1,5 @@
 from book_data import books
-# print("what are you going to do:\n1. see books list\n2. take out book\n3. add new book\n4. search book by name (to choose type number or exit to stop)")
+
 print("========= Mini Library =========")
 print("1. Show books")
 print("2. Borrow books")

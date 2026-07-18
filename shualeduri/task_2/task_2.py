@@ -24,63 +24,81 @@ def calculate_score(cards):
     for card in cards:
         value = card[1]
 
-        if value in ("J", "K", "Q"):
+        if value in ("J", "Q", "K"):
             total += 10
         elif value == "A":
             total += 11
         else:
             total += value
+
     return total
 
 
 def start_game():
-    deck = create_deck()
-
-    user = [draw_card(deck), draw_card(deck)]
-    computer = [draw_card(deck), draw_card(deck)]
-    user_sum = calculate_score(user)
-
-    print(f"user: {user[0]}, {user[1]}")
-    print(f"sum: {user_sum}")
-    print(f"computer: {computer[0]}, ?")
-
-    user_busted = False
-
     while True:
-        choice = input("add or stop: ")
-        if choice == "add":
-            user.append(draw_card(deck))
-            print(f"user: {user}")
-            print(f"sum: {calculate_score(user)}")
 
-            if calculate_score(user) > 21:
-                print("you lose")
-                user_busted = True
+        deck = create_deck()
+
+        user = [draw_card(deck), draw_card(deck)]
+        computer = [draw_card(deck), draw_card(deck)]
+
+        user_sum = calculate_score(user)
+
+        print("\n========== NEW GAME ==========")
+        print(f"Your cards: {user[0]}, {user[1]}")
+        print(f"Your score: {user_sum}")
+        print(f"Computer: {computer[0]}, ?")
+
+        user_busted = False
+
+        while True:
+            choice = input("add or stop: ").lower()
+
+            if choice == "add":
+                user.append(draw_card(deck))
+
+                user_sum = calculate_score(user)
+
+                print(f"Your cards: {user}")
+                print(f"Your score: {user_sum}")
+
+                if user_sum > 21:
+                    print("You lose!")
+                    user_busted = True
+                    break
+
+            elif choice == "stop":
                 break
 
-        elif choice == "stop":
+            else:
+                print("Wrong choice.")
+
+        if user_busted:
             break
 
-        else:
-            print("wrong choice")
-
-    if not user_busted:
         computer_sum = calculate_score(computer)
+
         while computer_sum < 17:
             computer.append(draw_card(deck))
             computer_sum = calculate_score(computer)
 
-        user_sum = calculate_score(user)
-        print(f"computer: {computer}")
-        print(f"computer sum: {computer_sum}")
+        print(f"\nComputer cards: {computer}")
+        print(f"Computer score: {computer_sum}")
 
         if computer_sum > 21:
-            print("computer busts, you win")
-        elif user_sum > computer_sum:
-            print("you win")
+            print("Computer busts! You win!")
+            break
+
+        if user_sum > computer_sum:
+            print("You win!")
+            break
+
         elif user_sum < computer_sum:
-            print("you lose")
+            print("You lose!")
+            break
+
         else:
-            print("tie")
+            print("\nIt's a tie! Dealing again...\n")
+
 
 start_game()
