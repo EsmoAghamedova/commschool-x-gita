@@ -10,16 +10,19 @@ def validate_name(value):
     errors = []
 
     if not value:
-        errors.append("Input cannot be empty. Please enter your name.")
+        errors.append("Name cannot be empty.")
+
+    if any(char.isdigit() for char in value):
+        errors.append("Numbers are not allowed.")
+
+    if any(not char.isalpha() for char in value):
+        errors.append("Symbols are not allowed.")
 
     if not value.isascii():
         errors.append("Only English letters are allowed.")
 
-    if not value.isalpha():
-        errors.append("Please enter letters only.")
-
     if not value.islower():
-        errors.append("Use lowercase letters only.")
+        errors.append("Only lowercase letters are allowed.")
 
     if errors:
         return False, errors
