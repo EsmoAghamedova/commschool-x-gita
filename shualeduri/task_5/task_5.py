@@ -7,17 +7,22 @@ user_data = {
 
 
 def validate_name(value):
+    errors = []
+
     if not value:
-        return False, "Input cannot be empty. Please enter your name."
+        errors.append("Input cannot be empty. Please enter your name.")
 
     if not value.isascii():
-        return False, "Only English letters are allowed."
+        errors.append("Only English letters are allowed.")
 
     if not value.isalpha():
-        return False, "Please enter letters only."
+        errors.append("Please enter letters only.")
 
     if not value.islower():
-        return False, "Use lowercase letters only."
+        errors.append("Use lowercase letters only.")
+
+    if errors:
+        return False, errors
 
     return True, None
 
@@ -31,17 +36,23 @@ def register():
 
     while True:
         name_input = input(
-            "Enter your name (lowercase Latin letters only): ").strip()
-        is_valid, message = validate_name(name_input)
+            "Enter your name (lowercase Latin letters only): "
+        ).strip()
+
+        is_valid, messages = validate_name(name_input)
 
         if is_valid:
             user_data["name"] = name_input
             break
         else:
-            print(f"Error: {message}\n")
+            print("\nErrors:")
+            for error in messages:
+                print(f"- {error}")
+            print()
 
     print("\nRegistration successfully completed!\n")
     print("--- Your Registered Details ---")
+
     for key, value in user_data.items():
         print(f"{key.title()}: {value}")
 
